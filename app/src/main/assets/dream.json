@@ -1,0 +1,18 @@
+
+[
+  {
+    "id": 1,
+    "name": "爱心光斑",
+    "color": "#CCEA0000",
+    "effect": "effect/loveSpot",
+    "effectName": "loveSpot"
+  },
+  {
+    "id": 2,
+    "name": "熊",
+    "color": "#CCEA0000",
+    "effect": "effect/spaceBear",
+    "effectName": "spaceBear"
+  }
+
+]

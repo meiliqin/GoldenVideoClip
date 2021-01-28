@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    compileSdkVersion config.compile_sdk_version
+    buildToolsVersion config.build_tool_version
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    defaultConfig {
+        applicationId "com.standisland.god.demo"
+        minSdkVersion config.min_sdk_version
+        targetSdkVersion config.target_sdk_version
+        versionCode config.version_code
+        versionName config.version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = []
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/mips/libc++_shared.so'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.fragment:fragment-ktx:1.1.0'
+    //协程库
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0"
+
+    //UI
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //图片还在
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation project(':core')
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //爱奇艺crash捕获
+//    implementation 'com.iqiyi.xcrash:xcrash-android-lib:2.4.9'
+    implementation 'com.iqiyi.xcrash:xcrash-android-lib:2.5.7'
+
+}

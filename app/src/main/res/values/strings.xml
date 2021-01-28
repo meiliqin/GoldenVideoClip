@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">GodFFmpeg</string>
+    <string name="select_file">选择文件</string>
+    <string name="please_select">请选择正确文件</string>
+    <string name="artwork">Artwork</string>
+    <string name="go">Go</string>
+    <string name="no_metadata">No metadata</string>
+    <string name="uri_error">Enter a valid URI</string>
+    <string name="error_message">Metadata could not be retrieved</string>
+
+
+    <string name="filter">滤镜</string>
+    <string name="music">音乐</string>
+    <string name="gif">动图</string>
+    <string name="subtitle">文字</string>
+    <string name="mv">MV</string>
+    <string name="sound">音效</string>
+    <string name="effect">特效</string>
+    <string name="speed_time">变速</string>
+    <string name="transition">转场</string>
+    <string name="paint">涂鸦</string>
+    <string name="cover">封面</string>
+    <string name="smoother">磨皮</string>
+    <string name="effect_tip">选择位置后, 按住使用效果</string>
+    <string name="undo">撤消</string>
+    <string name="split_screen">分屏</string>
+    <string name="dream">梦幻</string>
+    <string name="dynamic">动感</string>
+
+    <string name="caption_effect_font_category_name">纯文字</string>
+    <string name="caption_effect_bottom_keyboard">键盘</string>
+    <string name="caption_effect_bottom_color">颜色</string>
+    <string name="caption_effect_bottom_font">字体</string>
+    <string name="caption_effect_bottom_animation">特效</string>
+    <string name="text_count_outof">字数超出限制</string>
+    <string name="subtitle_text_color">填充</string>
+    <string name="subtitle_text_stroke">描边</string>
+
+</resources>

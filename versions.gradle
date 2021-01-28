@@ -1,0 +1,24 @@
+ext.deps = [:]
+def versions = [:]
+versions.androidx = "1.1.0"
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:$versions.androidx"
+androidx.annotations = "androidx.annotation:annotation:$versions.androidx"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.androidx"
+androidx.multidex = "androidx.multidex:multidex:$versions.androidx"
+androidx.constraint = "androidx.constraintlayout:constraintlayout:$versions.androidx"
+ext.deps.androidx = androidx
+
+
+def config = [:]
+config.min_sdk_version = 19
+config.target_sdk_version = 29
+config.compile_sdk_version = 29
+config.build_tool_version = "29.0.2"
+config.version_code = 1
+config.version_name = "1.0"
+config.java_source_version = "1.8"
+config.java_target_version = "1.8"
+ext.config = config
+

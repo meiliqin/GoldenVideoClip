@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/surface_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" />
+
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/paster_view"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent" />-->
+
+        <com.standisland.god.demo.feature.sticker.IMG.IMGView
+            android:id="@+id/img_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+<!--        <View-->
+<!--            android:layout_width="10dp"-->
+<!--            android:layout_height="10dp"-->
+<!--            android:background="@color/red_tip"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
+
+    </FrameLayout>
+
+    <com.standisland.god.demo.common.view.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        app:tabBackground="@android:color/transparent"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/white"
+        app:trinityTabMode="scrollable" />
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/user_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/action_bar_bg"
+            android:minHeight="64dp">
+
+            <ImageView
+                android:id="@+id/back"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_back"
+                android:paddingLeft="16dp" />
+
+            <TextView
+                android:id="@+id/tv_ffmpeg_info_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_toStartOf="@id/next"
+                android:gravity="center"
+                android:text="ffmpegInfo"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_video_info_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_toStartOf="@id/tv_ffmpeg_info_btn"
+                android:gravity="center"
+                android:text="videoInfo"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/next"
+                style="@style/NextBtnStyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp" />
+
+        </RelativeLayout>
+
+        <com.standisland.god.demo.common.view.thumline.OverlayThumbLineBar
+            android:id="@+id/thumb_line_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/v_sl_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#66000000"
+            android:padding="30dp"
+            android:textColor="@color/white"
+            tools:text="hhhh" />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/title_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_play"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/pause"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/title_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_pause" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/editor_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>
